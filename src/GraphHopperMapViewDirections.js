@@ -102,7 +102,7 @@ class GraphHopperMapViewDirections extends Component {
 	fetchRoute = (origin, waypoints, destination, apikey, mode, language, propurl) => {
 		// const url = `https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&waypoints=${waypoints}&destination=${destination}&key=${apikey}&mode=${mode}&language=${language}`;
 
-		const url = `${propurl}/route?point=${origin}&point=${destination}` 
+		const url = `${propurl}/route?point=${origin}&point=${destination}`
 
 		console.log('graph hopper url ==> ' + url);
 		return fetch(url)
@@ -187,6 +187,7 @@ GraphHopperMapViewDirections.propTypes = {
 	onError: PropTypes.func,
 	mode: PropTypes.oneOf(['driving', 'bicycling', 'transit', 'walking']),
 	language: PropTypes.string,
+	url: PropTypes.string
 };
 
 export default GraphHopperMapViewDirections;
